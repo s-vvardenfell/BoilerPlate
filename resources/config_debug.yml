@@ -1,0 +1,7 @@
+field1: "some value for DEBUG"
+field2: "some another value for DEBUG"
+logrus:
+  log_level: 4
+  to_file: false
+  to_json: false
+  log_dir: "logs/logs.log"
