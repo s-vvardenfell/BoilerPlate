@@ -21,9 +21,10 @@ func New(cnfg *config.Config, debug bool) *SomeStruct {
 	}
 }
 
-func (ss *SomeStruct) Work() {
-	for {
-		logrus.Info("%#v works\n", ss)
+func (ss *SomeStruct) Work() (string, error) {
+	for i := 0; i < 2; i++ {
+		logrus.Infof("%#v works\n", ss)
 		time.Sleep(5 * time.Second)
 	}
+	return ss.Field1 + " " + ss.Field2, nil
 }

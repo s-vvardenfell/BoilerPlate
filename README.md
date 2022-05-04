@@ -5,6 +5,7 @@ Added:<br>
 :heavy_check_mark: [cobra](https://github.com/spf13/cobra)<br>
 :heavy_check_mark: [viper](https://github.com/spf13/viper)<br>
 :heavy_check_mark: [logrus](https://github.com/sirupsen/logrus)<br>
+:heavy_check_mark: [testify](https://github.com/stretchr/testify)<br>
 <br>
 To add:<br>
 :white_large_square: what?
