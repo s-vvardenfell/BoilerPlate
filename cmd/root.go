@@ -1,7 +1,3 @@
-/*
-Copyright © 2022 s.vvardenfell
-
-*/
 package cmd
 
 import (
@@ -43,8 +39,7 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is resources/config.yml)")
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.Flags().BoolP("debug", "d", false, "Runs in debug-mode") //мб стоит сделать какую-то глобальную переменную видимую в др пакетах
+	rootCmd.Flags().BoolP("debug", "d", false, "Runs in debug-mode")
 }
 
 func initConfig() {
@@ -70,9 +65,7 @@ func initConfig() {
 	if err := viper.Unmarshal(&cnfg); err != nil {
 		cobra.CheckErr(err)
 	}
-	fmt.Printf("in initConfig: %v\n", cnfg)
 
-	//мб стоит передать параметры logrus через аргументы/флаги
 	if cnfg.Logrus.ToFile {
 		if err := os.Mkdir(filepath.Dir(cnfg.Logrus.LogDir), 0644); err != nil && !errors.Is(err, os.ErrExist) {
 			cobra.CheckErr(err)
